@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerLink - Link With Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <!-- Header -->
+    <header class="bg-blue-900 shadow-md py-4 relative z-40">
+        <div class="container mx-auto flex justify-between items-center px-6 max-w-5xl">
+            <div class="flex items-center space-x-3">
+                <a href="index.html">
+                    <img src="Logo_-_Powerlink_White-removebg-preview.png" alt="PowerLink Logo" class="h-24 w-auto">
+                </a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-auto mr-4 z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <nav class="mobile-menu">
+                <ul id="menu" class="hidden md:flex flex-col md:flex-row md:space-y-0 md:space-x-6 absolute md:relative 
+                    top-full right-0 w-48 md:w-auto bg-blue-900 md:bg-transparent shadow-lg md:shadow-none">
+                    <li class="hover:bg-blue-800 md:hover:bg-transparent">
+                        <a href="index.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Home</a>
+                    </li>
+                    <li class="hover:bg-blue-800 md:hover:bg-transparent">
+                        <a href="members.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Members</a>
+                    </li>
+                    <li class="hover:bg-blue-800 md:hover:bg-transparent">
+                        <a href="contact.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Link With Us</a>
+                    </li>
+                    <li class="hover:bg-blue-800 md:hover:bg-transparent">
+                        <a href="products.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Products</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<style>
+    @media (max-width: 768px) {
+        #menu {
+            border-radius: 0 0 10px 10px;
+            margin-top: 0;
+            padding: 0.5rem 0;
+        }
+        
+        #menu li:last-child {
+            border-radius: 0 0 10px 10px;
+        }
+    }
+</style>
+
+<script>
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+</script>
+    <!-- Main Content -->
+   <!-- Contact Section -->
+<section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-6">
+        <div class="max-w-5xl mx-auto">  <!-- Increased from max-w-4xl to max-w-5xl -->
+            <div data-aos="fade-up" class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <!-- Head
