@@ -21,20 +21,8 @@
     <script>
         // Inventory data
         const products = [
-            { name: 'X - Batteries', grade: 'X0', quantity: 0 },
-            { name: 'Y - Smartphones', grade: 'Y0', quantity: 0 }
-        ];
-
-        // Licenses data
-        const licenses = [
-            { name: 'X1 License', price: '$500,000' },
-            { name: 'X2 License', price: '$500,000' },
-            { name: 'X3 License', price: '$500,000' },
-            { name: 'X4 License', price: '$500,000' },
-            { name: 'X5 License', price: '$500,000' },
-            { name: 'X6 License', price: '$500,000' },
-            { name: 'X7 License', price: '$500,000' },
-            { name: 'X8 License', price: '$500,000' }// Example price
+            { name: 'X - Batteries', grade: 'X1', quantity: 48000 },
+            { name: 'Y - Smartphones', grade: 'Y0', quantity: 50000 }
         ];
 
         function displayInventory() {
@@ -52,25 +40,7 @@
             });
         }
 
-        function displayLicenses() {
-            const licensesList = document.getElementById('licenses-list');
-            licensesList.innerHTML = '';
-
-            licenses.forEach(license => {
-                const listItem = document.createElement('li');
-                listItem.className = 'mb-4';
-                listItem.innerHTML = `
-                    <h3 class="text-xl font-bold">${license.name}</h3>
-                    <p>Price: <span class="text-blue-900">${license.price}</span></p>
-                `;
-                licensesList.appendChild(listItem);
-            });
-        }
-
-        window.onload = function() {
-            displayInventory();
-            displayLicenses();
-        };
+        window.onload = displayInventory;
     </script>
 </head>
 <body class="bg-gray-100">
@@ -102,6 +72,9 @@
                     <li class="hover:bg-blue-800 md:hover:bg-transparent">
                         <a href="products.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Products</a>
                     </li>
+                    <li class="hover:bg-blue-800 md:hover:bg-transparent">
+                        <a href="licenses.html" class="block text-white text-lg py-3 px-6 md:px-0 md:py-0">Licenses</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -110,14 +83,9 @@
     <!-- Main Content -->
     <section class="py-20">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Inventory For Sale for Period 1</h2>
-            <ul id="inventory-list" class="bg-white p-8 rounded-xl shadow-lg mb-8">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Period 3 Inventory For Sale</h2>
+            <ul id="inventory-list" class="bg-white p-8 rounded-xl shadow-lg">
                 <!-- Inventory items will be dynamically inserted here -->
-            </ul>
-
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">License Pricing List</h2>
-            <ul id="licenses-list" class="bg-white p-8 rounded-xl shadow-lg">
-                <!-- Licenses items will be dynamically inserted here -->
             </ul>
         </div>
     </section>
