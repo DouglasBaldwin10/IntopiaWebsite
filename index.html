@@ -54,4 +54,62 @@
 <!-- Main Content -->
 <section class="py-8">
     <div class="container mx-auto px-6">
-        <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-12 text-blue-900">Welcome to Powe
+        <h2 data-aos="fade-up" class="text-4xl font-bold text-center mb-12 text-blue-900">Welcome to PowerLink</h2>
+        
+        <!-- Team Image Section -->
+        <div data-aos="fade-up" class="max-w-4xl mx-auto mb-12">
+            <img src="team.jpeg" alt="PowerLink Team" class="w-full rounded-xl shadow-lg mb-6">
+            <h3 class="text-2xl font-bold text-center text-blue-800">PowerLink (Team 36)</h3>
+        </div>
+
+        <!-- Mission Section -->
+        <div data-aos="fade-up" class="max-w-3xl mx-auto mb-16">
+            <h3 class="text-2xl font-semibold text-center text-blue-900 mb-4">Our Mission</h3>
+            <p class="text-lg text-gray-700 text-center mb-8">
+                [We can add our mission statement here]
+            </p>
+        </div>
+
+        <!-- Call to Action Button -->
+        <div data-aos="fade-up" class="text-center">
+            <a href="contact.html" class="inline-block bg-blue-900 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-blue-800 transition-colors duration-300 transform hover:scale-105">
+                Make A Deal With Us!
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Initialize AOS and Menu -->
+<script>
+    // Menu toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
+
+<!-- Footer -->
+<footer class="bg-blue-900 py-4 mt-8">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <p class="text-white text-center text-sm">© 2025 PowerLink. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
+

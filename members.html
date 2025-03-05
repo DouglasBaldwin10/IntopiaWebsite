@@ -68,4 +68,148 @@
     });
 
     // Close menu when clicking outside
-    document.addEventListener('click', (e) => 
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+</script>
+
+<!-- Main Content -->
+<main class="container mx-auto py-16 px-6">
+    <section class="py-8">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Team PowerLink</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Ava Zachary - COO -->
+                <div data-aos="fade-up" data-aos-delay="100" class="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="ava.JPEG" alt="Ava Zachary" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                            Ava Zachary
+                            <a href="https://www.linkedin.com/in/ava-zachary-8a0148223/" target="_blank" class="ml-2">
+                                <img src="linkedin-logo.webp" alt="LinkedIn" class="h-6 w-6">
+                            </a>
+                        </h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Operations Officer</p>
+                        <div class="h-px bg-gray-200 mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Doug Baldwin - CFO -->
+                <div data-aos="fade-up" data-aos-delay="200" class="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="doug.JPEG" alt="Doug Baldwin" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                            Doug Baldwin
+                            <a href="https://www.linkedin.com/in/-douglas-baldwin/" target="_blank" class="ml-2">
+                                <img src="linkedin-logo.webp" alt="LinkedIn" class="h-6 w-6">
+                            </a>
+                        </h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Financial Officer</p>
+                        <div class="h-px bg-gray-200 mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Jeff Bonsall - CEO -->
+                <div data-aos="fade-up" data-aos-delay="0" class="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="jeff.JPG" alt="Jeff Bonsall" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                            Jeff Bonsall
+                            <a href="https://www.linkedin.com/in/jeff-bonsall-967a04126/" target="_blank" class="ml-2">
+                                <img src="linkedin-logo.webp" alt="LinkedIn" class="h-6 w-6">
+                            </a>
+                        </h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Executive Officer</p>
+                        <div class="h-px bg-gray-200 mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Maggie MacLellan - CPO -->
+                <div data-aos="fade-up" data-aos-delay="300" class="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="maggie.JPEG" alt="Maggie MacLellan" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                            Maggie MacLellan
+                            <a href="https://www.linkedin.com/in/maggie--maclellan/" target="_blank" class="ml-2">
+                                <img src="linkedin-logo.webp" alt="LinkedIn" class="h-6 w-6">
+                            </a>
+                        </h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Partnerships Officer</p>
+                        <div class="h-px bg-gray-200 mb-4"></div>
+                    </div>
+                </div>
+
+                <!-- Nina Todorovic - CAO -->
+                <div data-aos="fade-up" data-aos-delay="400" class="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all">
+                    <div class="aspect-w-3 aspect-h-4">
+                        <img src="nina.JPEG" alt="Nina Todorovic" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                            Nina Todorovic
+                            <a href="https://www.linkedin.com/in/nikolina-todorovic0/" target="_blank" class="ml-2">
+                                <img src="linkedin-logo.webp" alt="LinkedIn" class="h-6 w-6">
+                            </a>
+                        </h3>
+                        <p class="text-blue-600 font-medium mb-4">Chief Administrative Officer</p>
+                        <div class="h-px bg-gray-200 mb-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-blue-900 py-4 mt-8">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <p class="text-white text-center text-sm">© 2025 PowerLink. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    
+    // Toggle menu when hamburger is clicked
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+
+    // Close menu when a link is clicked
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+        });
+    });
+</script>
+
+<script>
+    // Initialize AOS animations
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+</script>
+
+</body>
+</html>

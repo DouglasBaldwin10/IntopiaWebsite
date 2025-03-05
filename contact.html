@@ -81,4 +81,110 @@
         <div class="max-w-5xl mx-auto">  <!-- Increased from max-w-4xl to max-w-5xl -->
             <div data-aos="fade-up" class="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="p-8 md:p-12">
-                    <!-- Head
+                    <!-- Header with Logo -->
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-3xl font-bold text-blue-900">Link With Us!</h2>
+                        <img src="Logo_-_PowerLink_Black-removebg-preview.png" alt="PowerLink Logo" class="h-32 w-auto">
+                    </div>
+                    
+                    <!-- Team Contact Information -->
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-6">Team Contact Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-gray-600 font-medium">Team Email:</p>
+                                    <p class="text-lg">ott36@intopsim.com</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 font-medium">Team Phone Number:</p>
+                                    <p class="text-lg">(905) 537-6086</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-gray-600 font-medium">Room Location:</p>
+                                    <p class="text-lg">CRX</p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 font-medium">Room Number:</p>
+                                    <p class="text-lg">540</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Form -->
+                    <div class="w-full">
+                        <iframe 
+                            src="https://forms.gle/Zz7FBzN7fy2cruXt8" 
+                            class="w-full h-screen"  <!-- Use full screen height -->
+                            style="min-height: 80vh;"  <!-- Ensure it takes up most of the viewport height -->
+                            frameborder="0"
+                            allowfullscreen
+                            seamless
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-blue-900 py-4 mt-8">
+        <div class="container mx-auto px-6 max-w-5xl">
+        <p class="text-white text-center text-sm">© 2025 PowerLink. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        
+        // Toggle menu when hamburger is clicked
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    
+        // Close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    
+        // GSAP animations
+        gsap.from(".hero-text", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
+        });
+    
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
