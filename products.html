@@ -25,6 +25,11 @@
             { name: 'Y - Smartphones', grade: 'Y0', quantity: 0 }
         ];
 
+        // Licenses data
+        const licenses = [
+            //{ name: 'X1 License', price: '$500,000' } // Example price
+        ];
+
         function displayInventory() {
             const inventoryList = document.getElementById('inventory-list');
             inventoryList.innerHTML = '';
@@ -40,12 +45,29 @@
             });
         }
 
-        window.onload = displayInventory;
+        function displayLicenses() {
+            const licensesList = document.getElementById('licenses-list');
+            licensesList.innerHTML = '';
+
+            licenses.forEach(license => {
+                const listItem = document.createElement('li');
+                listItem.className = 'mb-4';
+                listItem.innerHTML = `
+                    <h3 class="text-xl font-bold">${license.name}</h3>
+                    <p>Price: <span class="text-blue-900">${license.price}</span></p>
+                `;
+                licensesList.appendChild(listItem);
+            });
+        }
+
+        window.onload = function() {
+            displayInventory();
+            displayLicenses();
+        };
     </script>
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
-
     <header class="bg-blue-900 shadow-md py-4 relative z-40">
         <div class="container mx-auto flex justify-between items-center px-6 max-w-5xl">
             <div class="flex items-center space-x-3">
@@ -82,8 +104,13 @@
     <section class="py-20">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Inventory For Sale for Period 1</h2>
-            <ul id="inventory-list" class="bg-white p-8 rounded-xl shadow-lg">
+            <ul id="inventory-list" class="bg-white p-8 rounded-xl shadow-lg mb-8">
                 <!-- Inventory items will be dynamically inserted here -->
+            </ul>
+
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Licenses Available for Period 1</h2>
+            <ul id="licenses-list" class="bg-white p-8 rounded-xl shadow-lg">
+                <!-- Licenses items will be dynamically inserted here -->
             </ul>
         </div>
     </section>
