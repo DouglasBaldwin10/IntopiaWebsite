@@ -40,35 +40,43 @@
             { name: 'Y - Smartphones', grade: 'Y2', status: 'SOLD OUT' }
         ];
 
-        const currentProducts = [
+        const period7Products = [
+            { name: 'Y - Smartphones', grade: 'Y4', status: 'SOLD OUT' }
+        ];
+
+        const period8Products = [
             { 
                 name: 'Y - Smartphones', 
-                grade: 'Y4', 
-                regions: [
-                    { name: 'Europe', quantity: 13000 },
-                    { name: 'China', quantity: 12000 }
-                ],
-                totalQuantity: 25000
+                grade: 'Y5', 
+                quantity: '48,000'
             }
         ];
 
         function displayInventory() {
-            // Current Inventory
-            const currentList = document.getElementById('current-list');
-            currentList.innerHTML = '';
-            currentProducts.forEach(product => {
+            // Period 8 (Current Inventory)
+            const period8List = document.getElementById('period8-list');
+            period8List.innerHTML = '';
+            period8Products.forEach(product => {
                 const listItem = document.createElement('li');
                 listItem.className = 'mb-4';
                 listItem.innerHTML = `
                     <h3 class="text-xl font-bold">${product.name} (${product.grade})</h3>
-                    <p>Total Quantity Available: <span class="text-blue-900">${product.totalQuantity.toLocaleString()}</span></p>
-                    <ul class="ml-4 mt-2">
-                        ${product.regions.map(region => `
-                            <li>- ${region.name}: <span class="text-blue-900">${region.quantity.toLocaleString()}</span></li>
-                        `).join('')}
-                    </ul>
+                    <p class="text-blue-600 font-bold">Quantity Available: ${product.quantity}</p>
                 `;
-                currentList.appendChild(listItem);
+                period8List.appendChild(listItem);
+            });
+
+            // Period 7
+            const period7List = document.getElementById('period7-list');
+            period7List.innerHTML = '';
+            period7Products.forEach(product => {
+                const listItem = document.createElement('li');
+                listItem.className = 'mb-4';
+                listItem.innerHTML = `
+                    <h3 class="text-xl font-bold">${product.name} (${product.grade})</h3>
+                    <p class="text-red-600 line-through font-bold">${product.status}</p>
+                `;
+                period7List.appendChild(listItem);
             });
 
             // Previous Periods (3-6)
@@ -131,11 +139,19 @@
     <!-- Main Content -->
     <section class="py-20">
         <div class="container mx-auto px-6 max-w-4xl space-y-12">
-            <!-- Current Inventory -->
+            <!-- Period 8 -->
             <div>
-                <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Current Inventory For Sale</h2>
-                <ul id="current-list" class="bg-white p-8 rounded-xl shadow-lg">
-                    <!-- Current inventory items will be dynamically inserted here -->
+                <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Period 8 Inventory</h2>
+                <ul id="period8-list" class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Period 8 inventory items will be dynamically inserted here -->
+                </ul>
+            </div>
+
+            <!-- Period 7 -->
+            <div>
+                <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Period 7 Inventory</h2>
+                <ul id="period7-list" class="bg-white p-8 rounded-xl shadow-lg">
+                    <!-- Period 7 inventory items will be dynamically inserted here -->
                 </ul>
             </div>
 
